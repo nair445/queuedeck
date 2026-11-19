@@ -1,0 +1,13 @@
+---
+# Defaults for the queuedeck role. Override in group_vars/ or with -e on the command line.
+app_name: queuedeck
+app_user: queuedeck
+app_dir: /opt/queuedeck
+app_config_dir: /etc/queuedeck
+app_port: 8080
+queue_policy: FIFO
+queue_capacity: 5
+java_package: openjdk-17-jre-headless
+
+# Path (on the control machine) of the JAR built by Maven/Jenkins
+artifact_src: "{{ lookup('ansible.builtin.fileglob', playbook_dir ~ '/../target/queuedeck-*.jar', wantlist=True) | first }}"

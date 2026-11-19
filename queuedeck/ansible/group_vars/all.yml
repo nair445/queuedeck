@@ -1,0 +1,5 @@
+---
+# Values for every host in the inventory (override role defaults).
+app_port: 8080
+queue_policy: PRIORITY
+queue_capacity: 10
